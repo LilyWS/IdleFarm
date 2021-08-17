@@ -18,13 +18,27 @@ testPlant = class {
     }
 }
 
-var farm = [[new plot(true, new testPlant()), new plot()], [new plot()], [new plot()], [new plot()]];
 
+
+var farm = [];
+var rows = 4;
+var columns = 8;
+
+for (let y = 0; y < rows; y++) {
+    let tempRow = [];
+    for (let x = 0; x < columns; x++) {
+        tempRow[x] = new plot();
+    } 
+    farm[y] = tempRow;
+    tempRow = [];
+} 
+
+farm[0][0].bought = true;
+farm[0][0].plant = new testPlant();
 
 render("farm");
 
 function main(){
-    console.log("hey")
     for (let y = 0; y<farm.length; y++){
         for (let x = 0; x<farm[y].length; x++){
             let cp = farm[y][x]; //shorthand for currentplot
@@ -50,10 +64,14 @@ function render(type){
                     plotDiv.className = "plot";
                     plotDiv.id = String(y)+String(x);
                     plotDiv.innerHTML = '<div class="plantImg"><img/><div> <ul><li><button>Water</button></li><li><button>Harvest</button></li></ul>';
-                    plotDiv.childNodes[0].childNodes[0].src="./assets/plant"+farm[y][x].stage+".png";
+                    plotDiv.childNodes[0].childNodes[0].src="./assets/plant"+cp.plant.stage+".png";
                     document.getElementById(String(y)).appendChild(plotDiv);
                 } else {
-                    
+                    let plotDiv = document.createElement("div");
+                    plotDiv.className = "plot notBought";
+                    plotDiv.id = String(y)+String(x);
+                    plotDiv.innerHTML = '<div><p>Plot Price: 200</p><ul><li><button>Buy Plot</button></li></ul></div>';
+                    document.getElementById(String(y)).appendChild(plotDiv);
                 }
             }
         }

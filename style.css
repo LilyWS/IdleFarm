@@ -43,8 +43,10 @@ main {
 }
 
 .farmRow {
-    max-height: 22.5%;
+    height: 22.5%;
     width: 100%;
+
+    display: flex;
 }
 
 .plantImg {
@@ -60,8 +62,8 @@ main {
 }
 
 .plot {
-    width: 11%;
-    height: 100%;
+    min-width: 11%;
+    min-height: 100%;
     border: 1px dashed black;
     display: inline-block;
     margin: 0 .75%;
@@ -69,10 +71,27 @@ main {
 
 .notBought {
     text-align: center;
+    position: relative;
+    top: 0;
+    min-width: 11%;
+}
+
+.notBought > div {
+    margin: 40% auto;
 }
 
 aside {
     width: 20%;
+    height:85vh;
     border: 1px dashed black;
     padding: 1% 2%;
+}
+
+footer {
+    background-color: rgba(20, 20, 20, .95);
+    color: #e8e8e8;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    font-size: 1em;
 }
