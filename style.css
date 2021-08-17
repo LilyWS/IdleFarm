@@ -4,4 +4,75 @@
 
 body {
     background-color: skyblue;
+    font-family: "Open Sans", sans-serif;
+}
+
+header {
+    text-align: center;
+    line-height: 10vh;
+    height: 10vh;
+    background-color: slategray;
+}
+
+h1 {
+    font-size: 2.2em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.4em;
+}
+h4 {
+    font-size: 1.1em;
+    margin: 0 0 .5em -.25em;
+}
+
+main {
+    display: flex;
+    flex-flow: row nowrap;
+    max-height: 85vh;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 80%;
+
+}
+
+.farmRow {
+    max-height: 22.5%;
+    width: 100%;
+}
+
+.plantImg {
+    margin: 0 auto;
+    height: 60%;
+} 
+
+.plantImg img {
+    height: 100%;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.plot {
+    width: 11%;
+    height: 100%;
+    border: 1px dashed black;
+    display: inline-block;
+    margin: 0 .75%;
+}
+
+.notBought {
+    text-align: center;
+}
+
+aside {
+    width: 20%;
+    border: 1px dashed black;
+    padding: 1% 2%;
 }
